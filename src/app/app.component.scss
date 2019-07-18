@@ -1,0 +1,17 @@
+ .app-background {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.app-wide-modal-container {
+  z-index: 2;
+  background-color: #fafafa;
+  border-radius: 8px;
+  opacity: 0;
+  padding: 1rem;
+  width: 90vw;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow: scroll;
+}

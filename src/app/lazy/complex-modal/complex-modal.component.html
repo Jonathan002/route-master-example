@@ -1,0 +1,45 @@
+<h2>Complex Modal</h2>
+<div class="mb-2">
+  Test to confirm multiple route parameters, route data, and observable route guard all work.
+</div>
+<div class="d-flex justify-content-between align-items-start">
+  <div class="mr-3">
+    <div>
+      <strong>Route-parameters</strong>
+    </div>
+    <ul>
+      <li *ngFor="let obj of params | keyvalue" class="p-2">
+        <div><strong>Route Param Key:</strong> ':{{ obj.key }}'</div>
+        <div><strong>Captured Route Param:</strong> '{{ obj.value }}'</div>
+      </li>
+    </ul>
+  </div>
+  <div class="mr-3">
+    <div>
+      <strong>Data</strong>:
+    </div>
+    <div>
+      {{ routeData | json }}
+    </div>
+  </div>
+</div>
+<hr>
+<div class="mb-3">
+  <div class="mb-2">
+    Test to confirm other native route functionality still works.
+  </div>
+  <div>
+    <strong>ActivatedRoute Query Parameters:</strong>
+  </div>
+  <code>
+    {{ queryParams | json }}
+  </code>
+  <div>
+    <strong>ActivatedRoute Query Parameters:</strong>
+  </div>
+  <code>
+    {{ fragment | json }}
+  </code>
+</div>
+
+<app-close-modal-button></app-close-modal-button>

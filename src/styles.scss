@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/scss/bootstrap.scss';
+
+.logo {
+  background-image: url('/assets/route-master.svg');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.position-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.should-show {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+
+.example-css-class-1 {
+  &:before {
+    content: "This is a custom :before css message. The outlet 'custom-classes-modal' adds your specified classes to any component loaded in this outlet. This is the exact same Lazy Modal Component used in the main feature section. View AppModule routeMasterConfig and styles.scss to inspect classes.";
+    display: block;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+  }
+}
+
+.example-css-class-2 {
+  display: block;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 0.5rem;
+  padding-bottom: 1rem;
+}

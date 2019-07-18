@@ -1,0 +1,17 @@
+<header>
+  <h1 class="d-flex justify-content-start align-items-center">
+    <span class="logo d-inline-block p-4 mr-3"></span>
+    <span>Route Master</span>
+  </h1>
+  <p>
+    It allows Entry Components of a Lazy Loaded NgModule to be available outside the Module through Routing.
+  </p>
+  <p>
+    This demo was inspired by a few github issues...
+  </p>
+  <ul>
+    <li *ngFor="let issue of issues">
+      <a [href]="issue" target="_blank">{{issue}}</a>
+    </li>
+  </ul>
+</header>

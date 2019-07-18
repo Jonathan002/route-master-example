@@ -1,0 +1,13 @@
+<a class="btn btn-primary" 
+[routerLink]="[
+    '', 
+    { 
+      outlets: { 
+        'ng-router-app-wide-modal': null, 
+        'rm-router-app-wide-modal': null,
+        'custom-classes-modal': null
+      }
+    }
+  ]" role="button">
+  {{ buttonText | uppercase }}
+</a>

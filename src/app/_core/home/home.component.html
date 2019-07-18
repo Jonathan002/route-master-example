@@ -1,0 +1,12 @@
+<h2>Welcome to HomeComponent</h2>
+<div class="mb-3">
+  Loaded From Root Module (AppModule)
+</div>
+<div>
+  <p>The anchor button below demos using Angular's named outlet to load a component. This is only possible here since
+    the component and the named router-outlet are part of AppModule.
+    If a lazy module tried to use AppModules named router-outlet for routing, the route will fail. Select Lazy Module in
+    the Navbar when finished viewing home modal demo.</p>
+  <a class="btn btn-primary" [routerLink]="['', { outlets: { 'ng-router-app-wide-modal': ['home-modal'] }}]"
+    role="button">{{ anchorText | uppercase }}</a>
+</div>

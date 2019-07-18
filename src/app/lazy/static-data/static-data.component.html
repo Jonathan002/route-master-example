@@ -1,0 +1,23 @@
+<h2>Static Route Data Modal</h2>
+<div class="mb-3">
+  <p class="mb-0">2 ways to pass static data to lazy components:</p>
+  <div class="mb-3">
+    <div>
+      <strong>Static Data:</strong>
+    </div>
+    <div>
+      <code>this.rm.data('outletName'):</code>
+      <div>=> {{ outletCurrentData | json }}</div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <div>
+      <strong>Stream Data:</strong>
+    </div>
+    <div>
+      <code>this.rm.data$('outletName').subscribe():</code>
+      <div>=> {{ outletData$ | async | json }}</div>
+    </div>
+  </div>
+</div>
+<app-close-modal-button></app-close-modal-button>

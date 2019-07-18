@@ -1,0 +1,42 @@
+<h2>Welcome to LazyComponent</h2>
+<div class="mb-3">
+  Lazy Loaded From "Lazy Module"
+</div>
+<section class="mb-4">
+  <h3>Main Feature</h3>
+  <ng-container 
+  *ngFor="let content of mainFeature; first as isFirst" 
+  [ngTemplateOutlet]="divTemplate" 
+  [ngTemplateOutletContext]="{ $implicit: content, isFirst: isFirst }">
+</ng-container>
+</section>
+<section>
+  <h3>Other Features to Explore</h3>
+  <ng-container 
+    *ngFor="let content of otherFeatures" 
+    [ngTemplateOutlet]="divTemplate" 
+    [ngTemplateOutletContext]="{ $implicit: content }">
+  </ng-container>
+</section>
+<section>
+  <h3>Complex Route Testing</h3>
+  <ng-container 
+    *ngFor="let content of complexRouteTesting" 
+    [ngTemplateOutlet]="divTemplate" 
+    [ngTemplateOutletContext]="{ $implicit: content }">
+  </ng-container>
+</section>
+
+<ng-template #divTemplate let-content="$implicit" let-isFirst="isFirst">
+  <div class="mb-3">
+    <p>{{ content.description }}</p>
+    <ngb-alert *ngIf="isFirst && showErrorAlert" [type]="'danger'" (close)="showErrorAlert = false">Angular Lazy Route Error Occurred: Check the console for details</ngb-alert>
+    <a (click)="content.onClick ? content.onClick() : null" class="btn"
+      [ngClass]="isFirst ? 'btn-warning' : 'btn-primary'"
+      [routerLink]="content.routerLink"
+      [queryParams]="content.queryParams ? content.queryParams : null"
+      [fragment]="content.fragment ? content.fragment : null"
+      role="button">{{ content.anchorText | uppercase }}</a>
+  </div>
+</ng-template>
+
