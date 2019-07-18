@@ -1,6 +1,6 @@
 import { Subscription, Observable } from 'rxjs';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { RouteMasterService } from 'layout-master';
+import { RouteMasterService } from 'angular-layout-master';
 
 @Component({
   selector: 'app-static-data',

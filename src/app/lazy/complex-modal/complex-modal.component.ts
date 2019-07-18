@@ -1,7 +1,7 @@
 import { first } from 'rxjs/operators';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { RouteMasterService } from 'layout-master';
+import { RouteMasterService } from 'angular-layout-master';
 import { Subscription } from 'rxjs';
 
 

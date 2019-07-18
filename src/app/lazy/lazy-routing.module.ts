@@ -1,6 +1,6 @@
 import { ComponentFactoryResolver, Injector, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ModuleFactoryRoutes, RouteMasterService, RoutePlus } from 'layout-master';
+import { ModuleFactoryRoutes, RouteMasterService, RoutePlus } from 'angular-layout-master';
 
 import { ComplexModalComponent } from './complex-modal/complex-modal.component';
 import { GuardedModalComponent } from './guarded-modal/guarded-modal.component';

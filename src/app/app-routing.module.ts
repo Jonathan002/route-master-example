@@ -1,6 +1,6 @@
 import { ComponentFactoryResolver, Injector, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ModuleFactoryRoutes, RouteMasterService } from 'layout-master';
+import { ModuleFactoryRoutes, RouteMasterService } from 'angular-layout-master';
 
 import { HomeModalComponent } from './_core/home-modal/home-modal.component';
 import { HomeComponent } from './_core/home/home.component';

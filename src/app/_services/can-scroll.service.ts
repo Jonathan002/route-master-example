@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { RouteMasterService } from 'layout-master';
+import { RouteMasterService } from 'angular-layout-master';
 import { Router } from '@angular/router';
 
 @Injectable({

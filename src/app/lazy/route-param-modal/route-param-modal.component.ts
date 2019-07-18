@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
-import { RouteMasterService } from 'layout-master';
+import { RouteMasterService } from 'angular-layout-master';
 
 @Component({
   selector: 'app-route-param-modal',

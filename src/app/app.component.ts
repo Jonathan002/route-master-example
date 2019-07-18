@@ -2,7 +2,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { CanScrollService } from './_services/can-scroll.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { RouteMasterService } from 'layout-master';
+import { RouteMasterService } from 'angular-layout-master';
 
 @Component({
   selector: 'app-root',

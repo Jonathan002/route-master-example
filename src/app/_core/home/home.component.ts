@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
-import { RouteMasterService, RouteMasterNavigationEnd } from 'layout-master';
+import { RouteMasterService, RouteMasterNavigationEnd } from 'angular-layout-master';
 
 @Component({
   selector: 'app-home',
