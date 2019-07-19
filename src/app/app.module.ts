@@ -33,7 +33,6 @@ const routeMasterConfig = {
     AppRoutingModule,
     CoreModule,
     SharedModule,
-    NgbModule.forRoot(),
     RouteMasterModule.forRoot(routeMasterConfig),
   ],
   providers: [],
