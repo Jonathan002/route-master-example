@@ -6,7 +6,6 @@ import { CoreModule } from './_core/core.module';
 import { SharedModule } from './_shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './_core/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routeMasterConfig = {

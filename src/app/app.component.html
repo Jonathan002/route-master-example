@@ -1,3 +1,5 @@
+
+
 <!-- App Document -->
 <app-navbar></app-navbar>
 <main class="p-3">
@@ -18,9 +20,16 @@
       || router.url.includes('(custom-classes-modal:')
     )">
   <!-- Regular Angular Router-Outlet -->
-  <router-outlet #ngOutlet="outlet" name="ng-router-app-wide-modal"></router-outlet>
+  <router-outlet name="ng-router-app-wide-modal"></router-outlet>
   <!-- Route Master Router-Outlet -->
   <lay-router [animationDuration]="500" #appWideModal name="rm-router-app-wide-modal"></lay-router>
   <!-- Styled Modal Demo -->
   <lay-router [animationDuration]="500" #appWideModal name="custom-classes-modal"></lay-router>
+</div>
+ 
+
+<!-- Necessary for Angular 6 Compatibility -->
+<div style="display: none">
+  <router-outlet name="rm-router-app-wide-modal"></router-outlet>
+  <router-outlet  name="custom-classes-modal"></router-outlet>
 </div>

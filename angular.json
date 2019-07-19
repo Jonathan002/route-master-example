@@ -3,21 +3,17 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "route-master-example": {
+    "ng6-project": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {
-        "@schematics/angular:component": {
-          "styleext": "scss"
-        }
-      },
+      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/route-master-example",
+            "outputPath": "dist/ng6-project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,11 +25,6 @@
             "styles": [
               "src/styles.scss"
             ],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "./src"
-              ]
-            },
             "scripts": []
           },
           "configurations": {
@@ -52,32 +43,25 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "buildOptimizer": true
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "route-master-example:build"
+            "browserTarget": "ng6-project:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "route-master-example:build:production"
+              "browserTarget": "ng6-project:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "route-master-example:build"
+            "browserTarget": "ng6-project:build"
           }
         },
         "test": {
@@ -88,7 +72,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": [],
             "assets": [
@@ -111,20 +95,19 @@
         }
       }
     },
-    "route-master-example-e2e": {
+    "ng6-project-e2e": {
       "root": "e2e/",
       "projectType": "application",
-      "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "route-master-example:serve"
+            "devServerTarget": "ng6-project:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "route-master-example:serve:production"
+              "devServerTarget": "ng6-project:serve:production"
             }
           }
         },
@@ -140,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "route-master-example"
+  "defaultProject": "ng6-project"
 }

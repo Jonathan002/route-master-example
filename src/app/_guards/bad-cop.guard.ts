@@ -11,7 +11,7 @@ export class BadCopGuard implements CanActivate {
 
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    state: RouterStateSnapshot): any {
     const url = 'lazy-module(rm-router-app-wide-modal:unauthorized)';
     const tree = this.router.parseUrl(url);
     // Fake http waiting..
