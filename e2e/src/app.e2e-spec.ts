@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to ng8-project!');
+    expect(page.getTitleText()).toEqual('Welcome to route-master-example!');
   });
 
   afterEach(async () => {
