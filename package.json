@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-ghp": "ng build --prod --aot --base-href \"https://jonathan002.github.io/route-master-example/\""
   },
   "private": true,
   "dependencies": {
