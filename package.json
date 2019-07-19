@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-ghp": "ng build --prod --aot --base-href \"https://jonathan002.github.io/route-master-example/\""
+    "build:ghp": "ng build --prod --aot --base-href \"https://jonathan002.github.io/route-master-example/\"",
+    "git:push:ghp": "git subtree push --prefix dist/route-master-example origin gh-pages"
   },
   "private": true,
   "dependencies": {
