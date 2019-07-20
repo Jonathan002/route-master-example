@@ -238,7 +238,7 @@ interface RouteMasterService {
 ### Route Master Component
 
 ```html
-<lay-router></<lay-router>
+<lay-router></lay-router>
 ```
 
 ```ts
