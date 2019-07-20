@@ -8,9 +8,9 @@
   - https://github.com/angular/angular/issues/14324
   - https://github.com/angular/angular/issues/26964
 - This project is compatible with the following Angular versions (Visit branches for working examples):
-  - 6.1.0
-  - 7.1.0
-  - 8.1.2
+  - 6.1.0 - @angular/cli@6.2.9
+  - 7.1.0 - @angular/cli@7.1.0
+  - 8.1.2 - @angular/cli@8.1.2
 
 ## Installation and Setup
 
