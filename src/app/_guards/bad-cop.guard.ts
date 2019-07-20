@@ -17,7 +17,6 @@ export class BadCopGuard implements CanActivate {
     // Fake http waiting..
     return new Promise((resolve, reject) => setTimeout(() => {
       // BadCopGuard says no and redirects
-      console.log('about to resolve tree');
       resolve(tree);
     }, 1500));
   }

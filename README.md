@@ -46,7 +46,7 @@ Similar to setting up named `<router-outlet>`s, add the `<lay-router>` component
 
   <!-- If you are using Angular 6.. the below code is necessary -->
   <div style="display: none">
-  <!-- Add a regular named router outlet for each <lay-router> -->
+  <!-- Add a regular named <router-outlet> for each <lay-router> -->
     <router-outlet  name="app-wide-modal"></router-outlet>
   </div>
 ```
