@@ -12,9 +12,15 @@
   - 7.1.0
   - 8.1.2
 
-## Installation
+## Installation and Setup
 
-Import the RouteMaster Module from the Angular Layout Master Package and add it to AppModule with a routeMasterConfig object added to the `.forRoot()` method.
+Install Angular Layout Master
+
+```
+npm i angular-layout-master --save
+```
+
+Import the RouteMaster Module from the Angular Layout Master Package and add it to AppModule with a `routeMasterConfig` object added to the `.forRoot()` method.
 
 ```ts
 import { RouteMasterModule, RouteMasterConfig } from 'angular-layout-master';
@@ -37,6 +43,12 @@ Similar to setting up named `<router-outlet>`s, add the `<lay-router>` component
 
 ```html
   <lay-router name="app-wide-modal"></lay-router>
+
+  <!-- If you are using Angular 6.. the below code is necessary -->
+  <div style="display: none">
+  <!-- Add a regular named router outlet for each <lay-router> -->
+    <router-outlet  name="app-wide-modal"></router-outlet>
+  </div>
 ```
 
 Register routes around your app and match them up to each named `<lay-router>` outlet.
@@ -45,7 +57,7 @@ Register routes around your app and match them up to each named `<lay-router>` o
 Register from **app-routing.module.ts**
 
 ```ts
-// Regular angular routes..
+// Regular Angular routes..
 const routes: Routes = []
 
 // Route Master Routes..
@@ -67,6 +79,8 @@ export class AppRoutingModule {
   ) {
     // Add module data via Route Master API..
     const lazyFactoryRoutes: ModuleFactoryRoutes = {
+      // NOTE: Module names are used to match up with the modules injector in Route Master..
+          // Make sure all modules registered to RouteMaster are unique in name.
       moduleName: 'AppRoutingModule',
       moduleFactory: this.componentFactoryResolver,
       moduleInjector: this.injector,
@@ -84,7 +98,7 @@ export class AppRoutingModule {
 Continue Registering from other modules as they load.. such as **lazy-routing.module.ts**
 
 ```ts
-// Regular angular routes..
+// Regular Angular routes..
 const routes: Routes = []
 
 // Route Master Routes..
@@ -97,27 +111,23 @@ const lazyModalRoutes: RoutePlus[] = [
   exports: [RouterModule],
 })
 export class LazyRoutingModule {
-  // Send it to Route Master when the lazy Module loads
   constructor(
-    // Get info about the lazy Module
     private componentFactoryResolver: ComponentFactoryResolver,
     private injector: Injector,
-    // DI Route Master Service
     private rm: RouteMasterService,
-  ) {
-    console.log('Lazy Module Initialized!');
-
-    // Add module data via Route Master API..
+  ) {  
     const lazyFactoryRoutes: ModuleFactoryRoutes = {
-      moduleName: 'LazyRoutingModule',
+          moduleName: 'LazyRoutingModule',
       moduleFactory: this.componentFactoryResolver,
       moduleInjector: this.injector,
       moduleRoutes: {
-        'app-wide-modal': lazyModalRoutes,
+          'app-wide-modal': lazyModalRoutes,
       }
     };
-    // Register to Routes to RouteMaster
+
+    // Register more Routes to RouteMaster when this module loads
     this.rm.registerRoutes(lazyFactoryRoutes);
+    console.log('Lazy Module Initialized!');
   }
 }
 ```
@@ -238,17 +248,17 @@ interface RouteMasterService {
   @Output() activation = new EventEmitter<boolean>();
 ```
 
-| Property Name                | Type                                 | Description                                                                                                                                                                                                                                                                                                                                        |
-| ---------------------------- | ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name                         | @Input: string                       | The name of the `lay-router`. This name must match one of the outlets properties listed in the route master config provided.                                                                                                                                                                                                                       |
-| animationDuration            | @Input: number                       | The amount of time to keep the dynamic component in the DOM before it is removed. Useful for letting css animations finish building out the component.                                                                                                                                                                                             |
-| enableSafariBodyScrollAssist | @Input: boolean                      | Defaults to true. This is made to assist safari's browser for mobile devices. If the component is scrollable, it will call prevent default onTouchmove when the top or bottom has been reached. This helps prevents the body document in the background from continuing the onTouchmove events scroll. Set to false to disable the preventDefault. |
-| activation                   | @Output: EventEmitter&ltboolean&gt() | An event emitter that emits true if the `lay-router` is creating a component and false if it is destroying a component.                                                                                                                                                                                                                            |
+| Property Name                | Type                               | Description                                                                                                                                                                                                                                                                                                                                            |
+| ---------------------------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| name                         | @Input: string                     | The name of the `<lay-router>`. This name must match one of the outlets properties listed in the route master config provided.                                                                                                                                                                                                                         |
+| animationDuration            | @Input: number                     | The amount of time to keep the dynamic component in the DOM before it is removed. Useful for letting css animations finish building out the component.                                                                                                                                                                                                 |
+| enableSafariBodyScrollAssist | @Input: boolean                    | Defaults to `true`. This is made to assist safari's browser for mobile devices. If the component is scrollable, it will call prevent default onTouchmove when the top or bottom has been reached. This helps prevents the body document in the background from continuing the onTouchmove events scroll. Set to `false` to disable the preventDefault. |
+| activation                   | @Output: EventEmitter\<boolean\>() | An event emitter that emits `true` if the `<lay-router>` is creating a component and `false` if it is destroying a component.                                                                                                                                                                                                                          |
 
 ## Support
 
 If this project was useful or helpful to you in any way consider supporting me by doing one of the following:
 
 -  Star this GitHub repo ⭐️
--  Share how you are using RouteMaster in the closed issue "Using RouteMaster". 
+-  Share how you are using RouteMaster in the closed issue ["Using RouteMaster"](https://github.com/Jonathan002/route-master-example/issues/1). 
 -  Buy me a coffee: https://www.buymeacoffee.com/jonathandev
