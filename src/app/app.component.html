@@ -18,9 +18,9 @@
       || router.url.includes('(custom-classes-modal:')
     )">
   <!-- Regular Angular Router-Outlet -->
-  <router-outlet #ngOutlet="outlet" name="ng-router-app-wide-modal"></router-outlet>
+  <router-outlet name="ng-router-app-wide-modal"></router-outlet>
   <!-- Route Master Router-Outlet -->
-  <lay-router [animationDuration]="500" #appWideModal name="rm-router-app-wide-modal"></lay-router>
+  <lay-router [animationDuration]="500" name="rm-router-app-wide-modal"></lay-router>
   <!-- Styled Modal Demo -->
-  <lay-router [animationDuration]="500" #appWideModal name="custom-classes-modal"></lay-router>
+  <lay-router [animationDuration]="500" name="custom-classes-modal"></lay-router>
 </div>

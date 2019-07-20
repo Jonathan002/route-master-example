@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteMasterModule } from 'angular-layout-master';
+import { RouteMasterModule, RouteMasterConfig } from 'angular-layout-master';
 
 import { CoreModule } from './_core/core.module';
 import { SharedModule } from './_shared/shared.module';
@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './_core/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-const routeMasterConfig = {
+const routeMasterConfig: RouteMasterConfig = {
   outlets: {
     'rm-router-app-wide-modal': true,
     // .example-css-classes are in styles.scss of this project
