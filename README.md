@@ -11,6 +11,9 @@
   - 6.1.0 - @angular/cli@6.2.9
   - 7.1.0 - @angular/cli@7.1.0
   - 8.1.2 - @angular/cli@8.1.2
+  
+## Demo Url
+https://jonathan002.github.io/route-master-example/
 
 ## Installation and Setup
 
